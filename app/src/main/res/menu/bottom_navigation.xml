@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+     <item
+         android:id="@+id/navLocation"
+         android:icon="@drawable/location"
+         android:title="Location">
+     </item>
+     <item
+         android:id="@+id/navResource"
+         android:icon="@drawable/resource"
+         android:title="Resources">
+     </item>
+     <item
+         android:id="@+id/navStatistics"
+         android:icon="@drawable/statistics"
+         android:title="Statistics">
+     </item>
+     <item
+         android:id="@+id/navUpdates"
+         android:icon="@drawable/updates"
+         android:title="Updates">
+     </item>
+     <item
+         android:id="@+id/navProfile"
+         android:icon="@drawable/profile"
+         android:title="Profile">
+     </item>
+</menu>
