@@ -21,6 +21,14 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/bottom_nav" />
 
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="60dp"
+            android:text="Logout"></Button>
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "722630772413",
+    "firebase_url": "https://tracertcovid19.firebaseio.com",
+    "project_id": "tracertcovid19",
+    "storage_bucket": "tracertcovid19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722630772413:android:c8560481796b1ca784d9d4",
+        "android_client_info": {
+          "package_name": "com.smit.tracertcovid_19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722630772413-p2jvd6vl84f56a930ue2ktv2onuuost5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjP8__g5cotBPhScn7UVi5JyN_jVsvTUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722630772413-p2jvd6vl84f56a930ue2ktv2onuuost5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
