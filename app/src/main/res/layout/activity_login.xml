@@ -13,10 +13,39 @@
         android:layout_height="250dp"
         android:contentDescription="logo"
         android:padding="35dp"
-        android:src="@drawable/logo" />
-
+        android:src="@drawable/logo"
+        android:transitionName="tr_logo_image"/>
 
     <TextView
+        android:id="@+id/tv_appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tracert COVID-19"
+        android:textSize="35sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-black"
+        android:transitionName="tr_logo_text"></TextView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Username">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -35,9 +64,26 @@
         android:hint="abc@xyz.com"
         android:inputType="textEmailAddress"
         android:textSize="20sp"
-        android:importantForAutofill="no"></EditText>
+        android:importantForAutofill="no"></EditText>-->
 
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Password"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -55,7 +101,7 @@
         android:hint="*********"
         android:inputType="textPassword"
         android:textSize="20sp"
-        android:importantForAutofill="no"></EditText>
+        android:importantForAutofill="no"></EditText>-->
 
     <Button
         android:id="@+id/btn_login"
@@ -77,14 +123,14 @@
 
         <ImageView
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_marginStart="70dp"
             android:contentDescription="facebook"
             android:src="@drawable/facebook" />
 
         <ImageView
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_marginStart="70dp"
             android:contentDescription="googleplus"
             android:src="@drawable/googleplus" />

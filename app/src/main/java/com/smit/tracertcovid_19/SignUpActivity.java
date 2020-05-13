@@ -15,12 +15,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
-    EditText email, password;
+    EditText name, birthday, city, email, password;
     Button btnSignup;
     FirebaseAuth mFirebaseAuth;
     TextView signIn;
+
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,9 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+        name = findViewById(R.id.signup_et_name);
+        birthday = findViewById(R.id.signup_et_DOB);
+        city = findViewById(R.id.signup_et_city);
         email = findViewById(R.id.signup_et_email);
         password = findViewById(R.id.signup_et_password);
         btnSignup = findViewById(R.id.btn_signup);
@@ -35,8 +43,18 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("users");
+
+                String namee = name.getText().toString();
+                String birthdayy = birthday.getText().toString();
+                String cityy = city.getText().toString();
                 String emailId = email.getText().toString();
                 String passwd = password.getText().toString();
+
+                UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
+                reference.child(passwd).setValue(helperClass);
+
                 if (emailId.isEmpty()) {
                     email.setError("Please enter email address");
                     email.requestFocus();
