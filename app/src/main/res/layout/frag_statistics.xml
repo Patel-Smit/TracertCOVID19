@@ -18,21 +18,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Canada"
+                android:text="@string/canada"
                 android:textColor="#000000"
                 android:textSize="30sp"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="*Situation in Numbers"
+                android:text="@string/situation_in_numbers"
                 android:textColor="#000000"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:text="Last Updated: May 16,2020 7:31 PM"></TextView>
+                android:text="@string/last_updated_may_16_2020_7_31_pm"></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,14 +45,14 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="1,256,974"
+                    android:text="@string/tested_value"
                     android:textAlignment="textEnd"
                     android:textSize="25sp"></TextView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tested"
+                    android:text="@string/tested"
                     android:textSize="25sp"></TextView>
 
             </LinearLayout>
@@ -67,7 +67,7 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="75,864"
+                    android:text="@string/totalcases_value"
                     android:textAlignment="textEnd"
                     android:textColor="#F44336"
                     android:textSize="25sp"></TextView>
@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total cases"
+                    android:text="@string/total_cases"
                     android:textSize="25sp"></TextView>
 
             </LinearLayout>
@@ -90,7 +90,7 @@
                     android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="5,595"
+                    android:text="@string/deaths_value"
                     android:textAlignment="textEnd"
                     android:textColor="#f47100"
                     android:textSize="25sp"></TextView>
@@ -98,7 +98,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Deaths"
+                    android:text="@string/deaths"
                     android:textSize="25sp"></TextView>
 
             </LinearLayout>
@@ -114,10 +114,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="Geographical Distribution"
+                android:text="@string/geographical_distribution"
                 android:textAlignment="textStart"
                 android:textColor="#000000"
-                android:textSize="20dp"></TextView>
+                android:textSize="20sp"></TextView>
 
             <ImageView
                 android:id="@+id/iv_map"
@@ -136,10 +136,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="Epidemic Curve"
+                android:text="@string/epidemic_curve"
                 android:textAlignment="textStart"
                 android:textColor="#000000"
-                android:textSize="20dp"></TextView>
+                android:textSize="20sp"></TextView>
 
             <ImageView
                 android:id="@+id/iv_graph"
@@ -158,16 +158,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="Individual Tested"
+                android:text="@string/individual_tested"
                 android:textAlignment="textStart"
                 android:textColor="#000000"
-                android:textSize="20dp"></TextView>
+                android:textSize="20sp"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Last Updated : May 18, 2020 11:00 AM"
+                android:text="@string/last_updated_may_18_2020_11_00_am"
                 android:textAlignment="textStart"
                 android:textColor="#000000"></TextView>
 

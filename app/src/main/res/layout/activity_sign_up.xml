@@ -13,13 +13,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:contentDescription="logo"
+                android:contentDescription="@string/logo"
                 android:padding="35dp"
                 android:src="@drawable/logo" />
 
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Name">
+                android:hint="@string/name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_et_name"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Birthday DD/MM/YYYY">
+                android:hint="@string/birthday_dd_mm_yyyy">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_et_DOB"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="City">
+                android:hint="@string/city">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_et_city"
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Email">
+                android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signup_et_email"
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -210,7 +210,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/gradient"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textColor="#ffffff"
                 android:textSize="20sp"></Button>
 
@@ -220,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="35dp"
-                android:text="Sign In"
+                android:text="@string/sign_in"
                 android:textAlignment="center"
                 android:textColor="#616161"></TextView>
 

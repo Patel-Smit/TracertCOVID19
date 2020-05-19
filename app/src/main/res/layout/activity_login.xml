@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:contentDescription="logo"
+        android:contentDescription="@string/logo"
         android:padding="35dp"
         android:src="@drawable/logo"
         android:transitionName="tr_logo_image"/>
@@ -20,7 +20,7 @@
         android:id="@+id/tv_appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tracert COVID-19"
+        android:text="@string/tracert_covid_19"
         android:textSize="35sp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -36,7 +36,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:hint="Username">
+        android:hint="@string/username">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -73,7 +73,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:hint="Password"
+        android:hint="@string/password"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -111,7 +111,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/gradient"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#ffffff"
         android:textSize="20sp"></Button>
 
@@ -125,14 +125,14 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginStart="70dp"
-            android:contentDescription="facebook"
+            android:contentDescription="@string/facebook"
             android:src="@drawable/facebook" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginStart="70dp"
-            android:contentDescription="googleplus"
+            android:contentDescription="@string/googleplus"
             android:src="@drawable/googleplus" />
 
     </LinearLayout>
@@ -142,7 +142,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Forgot Password ?"
+        android:text="@string/forgot_password"
         android:textAlignment="center"
         android:textColor="#616161"></TextView>
 
@@ -150,7 +150,7 @@
         android:id="@+id/tv_signUP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Not a member ? Sign Up"
+        android:text="@string/not_a_member_sign_up"
         android:textAlignment="center"
         android:textColor="#616161"></TextView>
 </LinearLayout>

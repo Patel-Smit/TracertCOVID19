@@ -16,13 +16,13 @@
         android:layout_height="400dp"
         android:src="@drawable/logo"
         android:alpha="0.75"
-        android:transitionName="tr_logo_image"/>
+        android:transitionName="tr_logo_image" />
 
     <TextView
         android:id="@+id/tv_appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tracert COVID-19"
+        android:text="@string/tracert_covid_19"
         android:textSize="45sp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
@@ -35,7 +35,7 @@
         android:id="@+id/tv_slogan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Now you can take precautions"
+        android:text="@string/now_you_can_take_precautions"
         android:textAlignment="center"
         android:textSize="20sp"
         android:fontFamily="serif-monospace"></TextView>

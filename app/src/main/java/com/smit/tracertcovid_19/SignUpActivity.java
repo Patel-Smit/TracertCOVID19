@@ -76,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 String userid = mFirebaseUser.getUid();
                                 UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
                                 reference.child(userid).setValue(helperClass);
-                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                             }
                         }
                     });

@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Tracert COVID-19</string>
+    <string name="logo">logo</string>
+    <string name="email">Email</string>
+    <string name="verify">Verify</string>
+    <string name="tracert_covid_19">Tracert COVID-19</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="facebook">facebook</string>
+    <string name="googleplus">googleplus</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="not_a_member_sign_up">Not a member ? Sign Up</string>
+    <string name="name">Name</string>
+    <string name="birthday_dd_mm_yyyy">Birthday DD/MM/YYYY</string>
+    <string name="city">City</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="now_you_can_take_precautions">Now you can take precautions</string>
+    <string name="logout">Logout</string>
+    <string name="epidemic_curve">Epidemic Curve</string>
+    <string name="geographical_distribution">Geographical Distribution</string>
+    <string name="deaths">Deaths</string>
+    <string name="deaths_value">5,595</string>
+    <string name="individual_tested">Individual Tested</string>
+    <string name="last_updated_may_18_2020_11_00_am">Last Updated : May 18, 2020 11:00 AM</string>
+    <string name="totalcases_value">75,864</string>
+    <string name="total_cases">Total cases</string>
+    <string name="tested">Tested</string>
+    <string name="tested_value">1,256,974</string>
+    <string name="last_updated_may_16_2020_7_31_pm">Last Updated: May 16,2020 7:31 PM</string>
+    <string name="situation_in_numbers">*Situation in Numbers</string>
+    <string name="canada">Canada</string>
 </resources>
