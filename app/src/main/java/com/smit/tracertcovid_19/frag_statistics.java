@@ -27,13 +27,19 @@ public class frag_statistics extends Fragment {
 
     private DatabaseReference mDatabaseReference;
     TextView tested,totalCases,deaths;
-    ImageView imageMap;
+    ImageView imageMap,epidemicCurve,individualTested;
     String imageMapURl = "http://www.smitpatel.tech/TracertCOVID19/covidmap.png";
+    String epidemicCurveURl = "http://www.smitpatel.tech/TracertCOVID19/graph.png";
+    String individualTestedURl = "http://www.smitpatel.tech/TracertCOVID19/individualTested.png";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_statistics,container,false);
         imageMap = (ImageView)v.findViewById(R.id.iv_map);
+        epidemicCurve = (ImageView)v.findViewById(R.id.iv_graph);
+        individualTested = (ImageView)v.findViewById(R.id.iv_tested);
+
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("dataStats");
         tested = (TextView) v.findViewById(R.id.tv_tested);
         totalCases = (TextView) v.findViewById(R.id.tv_totalCases);
@@ -57,6 +63,9 @@ public class frag_statistics extends Fragment {
         });
 
         Picasso.get().load(imageMapURl).into(imageMap);
+        Picasso.get().load(epidemicCurveURl).into(epidemicCurve);
+        Picasso.get().load(individualTestedURl).into(individualTested);
+
         return v;
     }
 

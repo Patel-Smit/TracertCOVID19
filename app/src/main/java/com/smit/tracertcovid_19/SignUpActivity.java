@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.UUID;
+
 public class SignUpActivity extends AppCompatActivity {
     EditText name, birthday, city, email, password;
     Button btnSignup;
@@ -51,9 +53,9 @@ public class SignUpActivity extends AppCompatActivity {
                 String cityy = city.getText().toString();
                 String emailId = email.getText().toString();
                 String passwd = password.getText().toString();
-
+                String userid = UUID.randomUUID().toString();
                 UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
-                reference.child(passwd).setValue(helperClass);
+                reference.child(userid).setValue(helperClass);
 
                 if (emailId.isEmpty()) {
                     email.setError("Please enter email address");
@@ -70,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignUpActivity.this, "User Unsuccessful, Please try again", Toast.LENGTH_SHORT).show();
                             } else {
-                                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             }
                         }
                     });

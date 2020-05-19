@@ -2,119 +2,180 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_marginRight="10dp"
+    android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Canada"
-        android:textColor="#000000"
-        android:textSize="30sp"></TextView>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="*Situation in Numbers"
-        android:textColor="#000000"></TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Last Updated: May 16,2020 7:31 PM"
-        android:layout_marginTop="7dp"></TextView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/tv_tested"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="1,256,974"
-            android:textAlignment="textEnd"
-            android:textSize="25sp"></TextView>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tested"
-            android:textSize="25sp"></TextView>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Canada"
+                android:textColor="#000000"
+                android:textSize="30sp"></TextView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*Situation in Numbers"
+                android:textColor="#000000"></TextView>
 
-        <TextView
-            android:id="@+id/tv_totalCases"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="75,864"
-            android:textAlignment="textEnd"
-            android:textSize="25sp"
-            android:textColor="#F44336"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Last Updated: May 16,2020 7:31 PM"></TextView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total cases"
-            android:textSize="25sp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_tested"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="1,256,974"
+                    android:textAlignment="textEnd"
+                    android:textSize="25sp"></TextView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tested"
+                    android:textSize="25sp"></TextView>
 
-        <TextView
-            android:id="@+id/tv_deaths"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="5,595"
-            android:textAlignment="textEnd"
-            android:textSize="25sp"
-            android:textColor="#f47100"></TextView>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Deaths"
-            android:textSize="25sp"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_totalCases"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="75,864"
+                    android:textAlignment="textEnd"
+                    android:textColor="#F44336"
+                    android:textSize="25sp"></TextView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/darker_gray" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total cases"
+                    android:textSize="25sp"></TextView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Geographical Distribution"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"></TextView>
+            </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"></ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_deaths"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="5,595"
+                    android:textAlignment="textEnd"
+                    android:textColor="#f47100"
+                    android:textSize="25sp"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deaths"
+                    android:textSize="25sp"></TextView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Geographical Distribution"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20dp"></TextView>
+
+            <ImageView
+                android:id="@+id/iv_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"></ImageView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Epidemic Curve"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20dp"></TextView>
+
+            <ImageView
+                android:id="@+id/iv_graph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"></ImageView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Individual Tested"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20dp"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Last Updated : May 18, 2020 11:00 AM"
+                android:textAlignment="textStart"
+                android:textColor="#000000"></TextView>
+
+            <ImageView
+                android:id="@+id/iv_tested"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ImageView>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
