@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -48,14 +49,13 @@ public class SignUpActivity extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("users");
 
-                String namee = name.getText().toString();
-                String birthdayy = birthday.getText().toString();
-                String cityy = city.getText().toString();
-                String emailId = email.getText().toString();
-                String passwd = password.getText().toString();
-                String userid = UUID.randomUUID().toString();
-                UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
-                reference.child(userid).setValue(helperClass);
+                final String namee = name.getText().toString();
+                final String birthdayy = birthday.getText().toString();
+                final String cityy = city.getText().toString();
+                final String emailId = email.getText().toString();
+                final String passwd = password.getText().toString();
+                //UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
+                //reference.child(userid).setValue(helperClass);
 
                 if (emailId.isEmpty()) {
                     email.setError("Please enter email address");
@@ -72,6 +72,10 @@ public class SignUpActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignUpActivity.this, "User Unsuccessful, Please try again", Toast.LENGTH_SHORT).show();
                             } else {
+                                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+                                String userid = mFirebaseUser.getUid();
+                                UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
+                                reference.child(userid).setValue(helperClass);
                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             }
                         }
