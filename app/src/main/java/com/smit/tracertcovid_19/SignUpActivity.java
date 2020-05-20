@@ -72,11 +72,23 @@ public class SignUpActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignUpActivity.this, "User Unsuccessful, Please try again", Toast.LENGTH_SHORT).show();
                             } else {
-                                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+                                FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+                                mFirebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (!task.isSuccessful()) {
+                                            Toast.makeText(SignUpActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(SignUpActivity.this, "Registration successful, check your email to verify your account.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
                                 String userid = mFirebaseUser.getUid();
                                 UserHelperClass helperClass = new UserHelperClass(namee,birthdayy,cityy,emailId,passwd);
                                 reference.child(userid).setValue(helperClass);
-                                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             }
                         }
                     });

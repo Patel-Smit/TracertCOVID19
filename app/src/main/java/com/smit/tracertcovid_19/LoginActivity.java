@@ -17,11 +17,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.sql.SQLOutput;
+
 public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     Button btnSignin;
     FirebaseAuth mFirebaseAuth;
-    TextView signUp,forgotPassword;
+    TextView signUp, forgotPassword;
 
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -42,19 +44,23 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-
-                if(mFirebaseUser!=null){
-                    Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this,MainActivity.class);
-                    i.putExtra("userID",mFirebaseAuth.getCurrentUser().getUid());
-                    startActivity(i);
-                }else{
-                    Toast.makeText(LoginActivity.this, "Please login again", Toast.LENGTH_SHORT).show();
+                if (mFirebaseUser != null) {
+                    //   Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    if (!mFirebaseAuth.getCurrentUser().isEmailVerified()) {
+                        Toast.makeText(LoginActivity.this, "Please verify your email before signing in", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                        i.putExtra("userID", mFirebaseAuth.getCurrentUser().getUid());
+                        startActivity(i);
+                    }
+                } else {
+                    //Toast.makeText(LoginActivity.this, "Please login again", Toast.LENGTH_SHORT).show();
+                    System.out.println("Please login again");
                 }
             }
         };
 
-        btnSignin.setOnClickListener(new View.OnClickListener(){
+        btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String emailId = email.getText().toString();
@@ -68,14 +74,23 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (emailId.isEmpty() && passwd.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
                 } else if (!(emailId.isEmpty() && passwd.isEmpty())) {
-                    mFirebaseAuth.signInWithEmailAndPassword(emailId,passwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    mFirebaseAuth.signInWithEmailAndPassword(emailId, passwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Login error", Toast.LENGTH_SHORT).show();
-                            }else{
-                                Intent intentToHome = new Intent(LoginActivity.this,MainActivity.class);
-                                startActivity(intentToHome);
+                            if (!task.isSuccessful() || !mFirebaseAuth.getCurrentUser().isEmailVerified()) {
+                                if (!mFirebaseAuth.getCurrentUser().isEmailVerified()) {
+                                    Toast.makeText(LoginActivity.this, "Please verify your email before signing in", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Login error", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                if (!mFirebaseAuth.getCurrentUser().isEmailVerified()) {
+                                    Toast.makeText(LoginActivity.this, "Please verify your email before signing in", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Intent intentToHome = new Intent(LoginActivity.this, MainActivity.class);
+                                    intentToHome.putExtra("userID", mFirebaseAuth.getCurrentUser().getUid());
+                                    startActivity(intentToHome);
+                                }
                             }
                         }
                     });
@@ -85,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        signUp.setOnClickListener(new View.OnClickListener(){
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
@@ -93,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        forgotPassword.setOnClickListener(new View.OnClickListener(){
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
@@ -102,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
