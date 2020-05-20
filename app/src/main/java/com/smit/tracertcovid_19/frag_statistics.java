@@ -28,9 +28,9 @@ public class frag_statistics extends Fragment {
     private DatabaseReference mDatabaseReference;
     TextView tested,totalCases,deaths;
     ImageView imageMap,epidemicCurve,individualTested;
-    String imageMapURl = "http://www.smitpatel.tech/TracertCOVID19/covidmap.png";
-    String epidemicCurveURl = "http://www.smitpatel.tech/TracertCOVID19/graph.png";
-    String individualTestedURl = "http://www.smitpatel.tech/TracertCOVID19/individualTested.png";
+    String imageMapURl = "http://www.smitpatel.tech/TracertCOVID19/covidmap.PNG";
+    String epidemicCurveURl = "http://www.smitpatel.tech/TracertCOVID19/graph.PNG";
+    String individualTestedURl = "http://www.smitpatel.tech/TracertCOVID19/individualTested.PNG";
 
     @Nullable
     @Override
