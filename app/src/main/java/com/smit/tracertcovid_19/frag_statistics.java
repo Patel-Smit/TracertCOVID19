@@ -26,11 +26,11 @@ public class frag_statistics extends Fragment {
 
 
     private DatabaseReference mDatabaseReference;
-    TextView tested,totalCases,deaths;
+    TextView tested, totalCases, deaths, lastupdated;
     ImageView imageMap,epidemicCurve,individualTested;
-    String imageMapURl = "http://www.smitpatel.tech/TracertCOVID19/covidmap.PNG";
-    String epidemicCurveURl = "http://www.smitpatel.tech/TracertCOVID19/graph.PNG";
-    String individualTestedURl = "http://www.smitpatel.tech/TracertCOVID19/individualTested.PNG";
+    //String imageMapURl = "https://cdn.shoplightspeed.com/shops/611783/files/16571311/image.jpg";
+    //String epidemicCurveURl = "https://httpsimage.com/v2/dd3637a0-c5e4-4c4a-9659-31b0e9fc7bac.jpg";
+    //String individualTestedURl = "https://www.smitpatel.tech/TracertCOVID19/individualTested.PNG";
 
     @Nullable
     @Override
@@ -44,6 +44,7 @@ public class frag_statistics extends Fragment {
         tested = (TextView) v.findViewById(R.id.tv_tested);
         totalCases = (TextView) v.findViewById(R.id.tv_totalCases);
         deaths = (TextView) v.findViewById(R.id.tv_deaths);
+        lastupdated = (TextView) v.findViewById(R.id.tv_lastupdate);
 
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -54,6 +55,14 @@ public class frag_statistics extends Fragment {
                 totalCases.setText(strtotalcases);
                 String strdeaths = dataSnapshot.child("deaths").getValue().toString();
                 deaths.setText(strdeaths);
+                String imgmapurl = dataSnapshot.child("imagemapurl").getValue().toString();
+                Picasso.get().load(imgmapurl).into(imageMap);
+                String imgcurveurl = dataSnapshot.child("imagecurveurl").getValue().toString();
+                Picasso.get().load(imgcurveurl).into(epidemicCurve);
+                String imgtestedurl = dataSnapshot.child("imagetestedurl").getValue().toString();
+                Picasso.get().load(imgtestedurl).into(individualTested);
+                String lstupdate = dataSnapshot.child("lastupdated").getValue().toString();
+                lastupdated.setText(lstupdate);
             }
 
             @Override
@@ -62,9 +71,9 @@ public class frag_statistics extends Fragment {
             }
         });
 
-        Picasso.get().load(imageMapURl).into(imageMap);
-        Picasso.get().load(epidemicCurveURl).into(epidemicCurve);
-        Picasso.get().load(individualTestedURl).into(individualTested);
+        //Picasso.get().load(imageMapURl).into(imageMap);
+        //Picasso.get().load(epidemicCurveURl).into(epidemicCurve);
+        //Picasso.get().load(individualTestedURl).into(individualTested);
 
         return v;
     }
