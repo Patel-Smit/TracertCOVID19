@@ -34,6 +34,7 @@
                 android:transitionName="tr_logo_image" />
 
             <TextView
+                android:id="@+id/tv_aboutcovid_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -43,6 +44,7 @@
                 android:textSize="20sp"></TextView>
 
             <TextView
+                android:id="@+id/tv_aboutcovid_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -52,11 +54,13 @@
                 android:textSize="20sp"></TextView>
 
             <TextView
+                android:id="@+id/tv_aboutcovid_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
                 android:text="The virus is primarily spread between people during close contact, most often via small droplets produced by coughing, sneezing, and talking. The droplets usually fall to the ground or onto surfaces rather than travelling through air over long distances. Less commonly, people may become infected by touching a contaminated surface and then touching their face. It is most contagious during the first three days after the onset of symptoms, although spread is possible before symptoms appear, and from people who do not show symptoms. The standard method of diagnosis is by real-time reverse transcription polymerase chain reaction (rRT-PCR) from a nasopharyngeal swab. Chest CT imaging may also be helpful for diagnosis in individuals where there is a high suspicion of infection based on symptoms and risk factors; however, guidelines do not recommend using CT imaging for routine screening."
                 android:textSize="20sp"></TextView>
 
