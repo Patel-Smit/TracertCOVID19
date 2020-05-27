@@ -8,149 +8,160 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:contentDescription="@string/logo"
-        android:padding="35dp"
-        android:src="@drawable/logo"
-        android:transitionName="tr_logo_image"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_appName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tracert_covid_19"
-        android:textSize="35sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-black"
-        android:transitionName="tr_logo_text"></TextView>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="@string/username">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_email"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical">
 
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="10dp"
-        android:text="Username"
-        android:textColor="#000000"
-        android:textSize="20sp"></TextView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="@string/logo"
+                android:padding="35dp"
+                android:src="@drawable/logo"
+                android:transitionName="tr_logo_image" />
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="abc@xyz.com"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        android:importantForAutofill="no"></EditText>-->
+            <TextView
+                android:id="@+id/tv_appName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/tracert_covid_19"
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:transitionName="tr_logo_text"></TextView>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="@string/password"
-        app:passwordToggleEnabled="true">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:hint="@string/username">
 
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Password"
-        android:textColor="#000000"
-        android:textSize="20sp"></TextView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="*********"
-        android:inputType="textPassword"
-        android:textSize="20sp"
-        android:importantForAutofill="no"></EditText>-->
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Username"
+                android:textColor="#000000"
+                android:textSize="20sp"></TextView>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/gradient"
-        android:text="@string/login"
-        android:textColor="#ffffff"
-        android:textSize="20sp"></Button>
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="abc@xyz.com"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                android:importantForAutofill="no"></EditText>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="70dp"
-            android:contentDescription="@string/facebook"
-            android:src="@drawable/facebook" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="70dp"
-            android:contentDescription="@string/googleplus"
-            android:src="@drawable/googleplus" />
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Password"
+                android:textColor="#000000"
+                android:textSize="20sp"></TextView>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="*********"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:importantForAutofill="no"></EditText>-->
 
-    <TextView
-        android:id="@+id/tv_forgotPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/forgot_password"
-        android:textAlignment="center"
-        android:textColor="#616161"></TextView>
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gradient"
+                android:text="@string/login"
+                android:textColor="#ffffff"
+                android:textSize="20sp"></Button>
 
-    <TextView
-        android:id="@+id/tv_signUP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/not_a_member_sign_up"
-        android:textAlignment="center"
-        android:textColor="#616161"></TextView>
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="70dp"
+                    android:contentDescription="@string/facebook"
+                    android:src="@drawable/facebook" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="70dp"
+                    android:contentDescription="@string/googleplus"
+                    android:src="@drawable/googleplus" />
+
+            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/tv_forgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/forgot_password"
+                android:textAlignment="center"
+                android:textColor="#616161"></TextView>
+
+            <TextView
+                android:id="@+id/tv_signUP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/not_a_member_sign_up"
+                android:textAlignment="center"
+                android:textColor="#616161"></TextView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

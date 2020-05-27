@@ -6,6 +6,9 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
@@ -16,6 +19,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+
+import static android.Manifest.permission.CALL_PHONE;
 
 public class bookapointmentDialog extends AppCompatDialogFragment {
 
@@ -32,8 +38,15 @@ public class bookapointmentDialog extends AppCompatDialogFragment {
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(getActivity().getApplication(), "Please call 911 or go directly to your nearest emergency department.", Toast.LENGTH_LONG).show();
-                Toast.makeText(getActivity().getApplication(), "These symptoms require immediate attention. You should call 911 immediately, or go directly to your nearest emergency department.", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getApplication(), "Please call 911 or go directly to your nearest emergency department.", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getApplication(), "These symptoms require immediate attention. You should call 911 immediately, or go directly to your nearest emergency department.", Toast.LENGTH_LONG).show();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + "5148955045"));
+                if (ContextCompat.checkSelfPermission(getActivity(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(callIntent);
+                } else {
+                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                }
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

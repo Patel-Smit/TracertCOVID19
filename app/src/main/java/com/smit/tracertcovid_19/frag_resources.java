@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.database.DatabaseReference;
 
 public class frag_resources extends Fragment {
-    LinearLayout aboutCovid, contactUS, selfCheck ,bookAppointment;
+    LinearLayout aboutCovid, contactUS, selfCheck, bookAppointment, precautions;
     //private DatabaseReference mDatabaseReference;
     @Nullable
     @Override
@@ -26,6 +26,7 @@ public class frag_resources extends Fragment {
         contactUS = (LinearLayout) v.findViewById(R.id.ll_contactus);
         selfCheck = (LinearLayout) v.findViewById(R.id.ll_selfCheck);
         bookAppointment = (LinearLayout) v.findViewById(R.id.ll_bookAppointment);
+        precautions = (LinearLayout) v.findViewById(R.id.ll_prevention);
 
         aboutCovid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,13 @@ public class frag_resources extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity().getApplication(),selfcheckActivity.class);
+                startActivity(i);
+            }
+        });
+        precautions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity().getApplication(), precautionsActivity.class);
                 startActivity(i);
             }
         });
