@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fragment selectedFragment = new frag_location();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer,
+                selectedFragment).commit();
+
         Intent intent = getIntent();
         final String userid = intent.getStringExtra("userID");
         System.out.println(userid);
